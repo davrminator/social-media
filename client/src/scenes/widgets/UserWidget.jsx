@@ -80,7 +80,7 @@ const UserWidget = ({ userId, picturePath }) => {
 
       <Divider />
 
-      {/* SECOND ROW */}
+      {/* SECOND ROW: TODO: is this row necessary? */}
       <Box p="1rem 0">
         <Box display="flex" alignItems="center" gap="1rem" mb="0.5rem">
           <LocationOnOutlined fontSize="large" sx={{ color: main }} />
@@ -94,7 +94,7 @@ const UserWidget = ({ userId, picturePath }) => {
 
       <Divider />
 
-      {/* THIRD ROW */}
+      {/* THIRD ROW: : TODO: is this row necessary?  */}
       <Box p="1rem 0">
         <FlexBetween mb="0.5rem">
           <Typography color={medium}>Who's viewed your profile</Typography>
@@ -112,7 +112,7 @@ const UserWidget = ({ userId, picturePath }) => {
 
       <Divider />
 
-      {/* FOURTH ROW */}
+      {/* FOURTH ROW: TODO: is this row necessary? */}
       <Box p="1rem 0">
         <Typography fontSize="1rem" color={main} fontWeight="500" mb="1rem">
           Social Profiles

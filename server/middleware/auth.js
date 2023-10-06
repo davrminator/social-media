@@ -1,4 +1,4 @@
-import jwt from "jsonwebtoken";
+import jwt from "jsonwebtoken"; //TODO: use third party solution like auth 0 instead of JWT, JWT is basic and has many vulnarabilities
 
 export const verifyToken = async (req, res, next) => {
   try {

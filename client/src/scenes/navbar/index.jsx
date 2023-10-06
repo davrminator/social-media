@@ -76,6 +76,7 @@ const Navbar = () => {
       {/* DESKTOP NAV */}
       {isNonMobileScreens ? (
         <FlexBetween gap="2rem">
+          {/* TODO: this component is reused like above, make a reusable component for this */}
           <IconButton onClick={() => dispatch(setMode())}>
             {theme.palette.mode === "dark" ? (
               <DarkMode sx={{ fontSize: "25px" }} />
@@ -147,7 +148,8 @@ const Navbar = () => {
             justifyContent="center"
             alignItems="center"
             gap="3rem"
-          >
+          > 
+            {/* TODO: this component is reused like above, make a reusable component for this */}
             <IconButton
               onClick={() => dispatch(setMode())}
               sx={{ fontSize: "25px" }}

@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  mode: "light",
+  mode: "dark",
   user: null,
   token: null,
   posts: [],
@@ -32,7 +32,7 @@ export const authSlice = createSlice({
     setPosts: (state, action) => {
       state.posts = action.payload.posts;
     },
-    setPost: (state, action) => {
+    setPost: (state, action) => { //this makes sure we return the most updates posts
       const updatedPosts = state.posts.map((post) => {
         if (post._id === action.payload.post._id) return action.payload.post;
         return post;

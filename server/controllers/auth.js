@@ -2,6 +2,8 @@ import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import User from "../models/User.js";
 
+//TODO: use third party solution like auth 0 instead of JWT & bcrypt, JWT is basic and has many vulnarabilities
+
 /* REGISTER USER */
 export const register = async (req, res) => {
   try {
@@ -43,13 +45,13 @@ export const login = async (req, res) => {
   try {
     const { email, password } = req.body;
     const user = await User.findOne({ email: email });
-    if (!user) return res.status(400).json({ msg: "User does not exist. " });
+    if (!user) return res.status(400).json({ msg: "User with this email does not exist. " });
 
     const isMatch = await bcrypt.compare(password, user.password);
-    if (!isMatch) return res.status(400).json({ msg: "Invalid credentials. " });
+    if (!isMatch) return res.status(400).json({ msg: "Invalid password. " });
 
     const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET);
-    delete user.password;
+    delete user.password; //so this doesnt get sent back to the frontend, keeping the password safe
     res.status(200).json({ token, user });
   } catch (err) {
     res.status(500).json({ error: err.message });
